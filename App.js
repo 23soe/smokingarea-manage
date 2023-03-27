@@ -9,10 +9,13 @@ const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Login">
+        <Stack.Screen name="Login" component={Login}/>
+        <Stack.Screen name="Join" component={Join}/>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
@@ -24,17 +27,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
-
-
-export default function App() {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Login">
-        <Stack.Screen name="Login" component={Login}/>
-        <Stack.Screen name="Join" component={Join}/>
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-}
 
 //화면전환 : https://developer-trier.tistory.com/m/301
