@@ -20,9 +20,6 @@ const App = () => {
         showsHorizontalScrollIndicator={false}
         >
         <View style={styles.container}>
-        <Text style={styles.paragraph}>B1F</Text>
-        </View>
-        <View style={styles.container}>
         <Text style={styles.paragraph}>4F</Text>
         <Image
             style={styles.image}
