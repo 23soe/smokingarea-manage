@@ -10,9 +10,29 @@ import {
   TouchableOpacity} from 'react-native';
 
 const {width : SCREEN_WIDTH} = Dimensions.get("window");
+const url_B1F = 'http://172.20.10.2:8081/B1F';
+const url_6F = 'http://172.20.10.2:8081/6F';
 
 const App = () => {
     const [showImage, setShowImage] = useState(false);
+
+    const handleButtonClick_B1F = async () => {
+      const response = await fetch(url_B1F, {
+        method: 'POST'
+      });
+      const data = await response.text();
+      alert(data);
+      console.log(data);
+    }
+
+    const handleButtonClick_6F = async () => {
+      const response = await fetch(url_6F, {
+        method: 'POST'
+      });
+      const data = await response.text();
+      alert(data);
+      console.log(data);
+    }
 
   return (
       <ScrollView
@@ -27,7 +47,7 @@ const App = () => {
               source={require('../assets/S06-4F.jpg')}
               resizeMode="contain"/>
           <TouchableOpacity
-              onPress={() => alert('지하1층 흡연신고가 접수되었습니다.') }>
+              onPress={handleButtonClick_B1F}>
               <Image
                 style={{
                   left:125,
@@ -70,7 +90,7 @@ const App = () => {
               source={require('../assets/S06-6F_smokingarea.jpg')}
             resizeMode="contain"/>
             <TouchableOpacity
-              onPress={() => alert('6층 흡연신고가 접수되었습니다.') }>
+              onPress={handleButtonClick_6F}>
               <Image
                 style={{
                   left:155,
